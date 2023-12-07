@@ -94,7 +94,7 @@ func UpdateList() *tview.List {
 func ShowScreen() {
 	newList := UpdateList()
 	if err := application.SetRoot(newList, true).SetFocus(newList).Run(); err != nil {
-		panic("This is fucked")
+		panic(err)
 	}
 
 }
@@ -106,7 +106,7 @@ func HandleResponse(index int, mainText string, secondaryText string, shortcut r
 	} else if mainText == "Back" && currDir.PreviousDir != nil {
 		GoToPreviousDirectory()
 	} else if mainText == "Back" {
-		fmt.Println("IM SLOW")
+		fmt.Println("Back")
 	} else if mainText == "search" {
 		//
 	}
